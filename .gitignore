@@ -1,0 +1,6 @@
+phoenix
+include/phoenix
+pxcube
+src/**/*.d
+src/**/*.o
+compile_flags.txt

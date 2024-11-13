@@ -3,6 +3,7 @@
 git clone https://github.com/ItaloYt/PXCube.git pxcube
 cd pxcube/
 git clone https://github.com/ItaloYt/Phoenix-Engine.git phoenix
+mkdir include/
 ln -s phoenix/include/* include/
 make
 ```

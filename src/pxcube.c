@@ -2,6 +2,7 @@
 #include "util/resource.h"
 
 #include "window.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <vulkan/vulkan_core.h>
 
@@ -25,7 +26,7 @@ int main() {
   if(resources_load() != SUCCESS)
     return RESOURCES_LOAD_ERROR;
 
-  if(window_create(&window, "PXCube", 1000, 700) != SUCCESS)
+  if(window_create(&window, NULL, "PXCube", 1000, 700) != SUCCESS)
     return WINDOW_CREATE_ERROR;
 
   if(renderer_create(&renderer, window, "PXCube", VK_MAKE_API_VERSION(0, 0, 0, 0)) != SUCCESS)
@@ -39,4 +40,8 @@ int main() {
   }
 
   return 0;
+}
+
+void window_resize_callback(void *handle, int width, int height) {
+  renderer_resize(renderer);
 }
